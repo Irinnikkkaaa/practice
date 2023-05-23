@@ -7,7 +7,7 @@ import java.util.List;
 public interface IInstrumentService {
     List<Instrument> getAllInstrument();
     Instrument getInstrumentById(Long id);
-    Instrument createInstrument(Instrument instrument); //первое-класс, второе-конкретный объект
+    void createInstrument(Instrument instrument); //первое-класс, второе-конкретный объект
     void deleteInstrument(Long id);
-    Instrument updateInstrument(Instrument instrument);
+    void updateInstrument(Instrument instrument);
 }

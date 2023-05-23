@@ -1,17 +1,21 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Учёт измерительных приборов</title>
+    <title>Добавление измерительных приборов</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-
-<div class="container mt-5">
-    <h1>Учёт измерительных приборов</h1>
-</div>
-
-<div th:insert="blocks/footer :: footer"></div>
+    <h1>Добавление измерительных приборов</h1>
+<form th:action="@{/instrument/add}" method="post">
+    <input type="number" name="id" placeholder="Табельный номер" required>
+    <input type="text" name="title" placeholder="Наименование" required>
+    <input type="text" name="unit_of_measurement" placeholder="Единицу измерения" required>
+    <input type="number" name="division_price" placeholder="Цена деления" required>
+    <input type="number" name="sensitivity" placeholder="Чувствительность" required>
+    <input type="number" name="maximum_value" placeholder="Максимальное значение" required>
+    <input type="number" name="number_of_box" placeholder="Номер ящика" required>
+    <button type="submit">Добавить</button>
+</form>
 </body>
 </html>

@@ -56,7 +56,6 @@ public class Instrument {
     public void setMaximum_value(int maximum_value) {
         this.maximum_value = maximum_value;
     }
-
     public int getNumber_of_box() {
         return number_of_box;
     }
@@ -64,4 +63,15 @@ public class Instrument {
     public void setNumber_of_box(int number_of_box) {
         this.number_of_box = number_of_box;
     }
+
+    public Instrument(Long id, String title, String unit_of_measurement, int division_price, double sensitivity, int maximum_value, int number_of_box) {
+        this.id = id;
+        this.title = title;
+        this.unit_of_measurement = unit_of_measurement;
+        this.division_price = division_price;
+        this.sensitivity = sensitivity;
+        this.maximum_value = maximum_value;
+        this.number_of_box = number_of_box;
+    }
 }
+
