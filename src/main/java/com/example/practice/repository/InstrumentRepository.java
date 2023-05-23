@@ -12,6 +12,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
 @Repository
 
 public class InstrumentRepository implements IInstrumentRepository{
@@ -158,7 +160,7 @@ public class InstrumentRepository implements IInstrumentRepository{
         for (String line : lines) {
             String[] values = line.split(";");
             if (Long.parseLong(values[0]) == instrument.getId()) {
-                String updatedLine = String.format("%ld;%s;%s;%d;%f;%d;%d", instrument.getId(), instrument.getTitle(), instrument.getUnit_of_measurement(), instrument.getDivision_price(), instrument.getSensitivity(),instrument.getMaximum_value(),instrument.getNumber_of_box());
+                String updatedLine = String.format(Locale.US, "%d;%s;%s;%d;%.2f;%d;%d", instrument.getId(), instrument.getTitle(), instrument.getUnit_of_measurement(), instrument.getDivision_price(), instrument.getSensitivity(), instrument.getMaximum_value(), instrument.getNumber_of_box());
                 updatedLines.add(updatedLine);
                 updated = true;
             } else {
