@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+    <form th:action="@{/instrument/{id}/update(id=${id})}" method ="post">
+        <input type="number" name="number_of_box" placeholder="Номер ящика" th:value="${instrument.number_of_box}" required>
+        <button type="submit">Сохранить</button>
+    </form>
+</main>
+</body>
+</html>
