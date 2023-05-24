@@ -8,7 +8,6 @@
 <header th:insert="blocks/header :: header"></header>
     <h1>Добавление измерительных приборов</h1>
 <form th:action="@{/instrument/add}" method="post">
-    <input type="number" name="id" placeholder="Табельный номер" required>
     <input type="text" name="title" placeholder="Наименование" required>
     <input type="text" name="unit_of_measurement" placeholder="Единицу измерения" required>
     <input type="number" name="division_price" placeholder="Цена деления" required>

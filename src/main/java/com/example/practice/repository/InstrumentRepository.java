@@ -97,10 +97,10 @@ public class InstrumentRepository implements IInstrumentRepository{
                     instrument.getDivision_price(),
                     instrument.getSensitivity(),
                     instrument.getMaximum_value(),
-                    instrument.getNumber_of_box()
+                    instrument.getNumber_of_box()//получаем для того, чтоб записать
             );
 
-            csvPrinter.flush();
+            csvPrinter.flush();//без понятия (загуглить)
         } catch (IOException e) {
             System.err.println("Ошибка сохранения файла: " + e.getMessage());
         }
@@ -110,7 +110,7 @@ public class InstrumentRepository implements IInstrumentRepository{
     @Override
     public void deleteInstrument(Long id) {
         List<Instrument> instruments = getAllInstrument();
-        Instrument instrumentToRemove = null;
+        Instrument instrumentToRemove = null;//инструмент для удаления пока ничему не равен
         for (Instrument instrument : instruments) {
             if (instrument.getId() == id) {
                 instrumentToRemove = instrument;
@@ -118,7 +118,7 @@ public class InstrumentRepository implements IInstrumentRepository{
             }//берем по айдишнику
         }
         if (instrumentToRemove != null) {
-            instruments.remove(instrumentToRemove);
+            instruments.remove(instrumentToRemove);//удаление из листа
             try {
                 // Открываем файл на запись
                 BufferedWriter writer = new BufferedWriter(new FileWriter(file));
@@ -155,21 +155,15 @@ public class InstrumentRepository implements IInstrumentRepository{
         List<String> lines = Files.readAllLines(Path.of(file), StandardCharsets.UTF_8);
         lines.remove(0);
         List<String> updatedLines = new ArrayList<>();
-        boolean updated = false;
         updatedLines.add(fileHead);
         for (String line : lines) {
             String[] values = line.split(";");
-            if (Long.parseLong(values[0]) == instrument.getId()) {
+            if (Long.parseLong(values[0]) == instrument.getId()) {//id строки сравниваем с id, который нам пришел
                 String updatedLine = String.format(Locale.US, "%d;%s;%s;%d;%.2f;%d;%d", instrument.getId(), instrument.getTitle(), instrument.getUnit_of_measurement(), instrument.getDivision_price(), instrument.getSensitivity(), instrument.getMaximum_value(), instrument.getNumber_of_box());
                 updatedLines.add(updatedLine);
-                updated = true;
             } else {
                 updatedLines.add(line);
             }
-        }
-        if (!updated) {
-            System.err.println("Студент не найден в файле.");
-            return;
         }
         Files.write(Path.of(file), updatedLines, StandardCharsets.UTF_8);
         System.out.println("Информация о студенте успешно изменена в файле.");

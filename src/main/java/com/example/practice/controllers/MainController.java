@@ -44,13 +44,13 @@ public class MainController {
         return "instrument-main";
     }
     @PostMapping("/instrument/add")
-    public  String instrumentAdd(@RequestParam Long id,
-                                 @RequestParam String title,
+    public  String instrumentAdd(@RequestParam String title,
                                  @RequestParam String unit_of_measurement,
                                  @RequestParam int division_price,
                                  @RequestParam double sensitivity,
                                  @RequestParam int maximum_value,
                                  @RequestParam int number_of_box){
+        Long id = 0L;
         Instrument instrument = new Instrument(id, title, unit_of_measurement, division_price, sensitivity, maximum_value, number_of_box);
         instrumentService.createInstrument(instrument);
         return "redirect:/";
