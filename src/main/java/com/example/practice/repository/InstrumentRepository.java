@@ -30,9 +30,9 @@ public class InstrumentRepository implements IInstrumentRepository{
             br.readLine();
 
             while ((line = br.readLine()) != null) {
-                String[] fields = line.split(";");//чтение каждой линии
+                String[] fields = line.split(";");//строка записывается в массив
 
-                Long id = Long.parseLong(fields[0]);//строку переводим в тип Long
+                Long id = Long.parseLong(fields[0]);//строку переводим в тип Long, присваеивается часть массива
                 String title = fields[1];
                 String unit_of_measurement = fields[2];
                 int division_price = Integer.parseInt(fields[3]);
@@ -41,7 +41,7 @@ public class InstrumentRepository implements IInstrumentRepository{
                 int number_of_box = Integer.parseInt(fields[6]);
 
                 Instrument instrument = new Instrument(id, title, unit_of_measurement, division_price, sensitivity, maximum_value, number_of_box);
-                instruments.add(instrument);
+                instruments.add(instrument);//добавление в список инструментов
             }
         } catch (IOException e) {
             System.err.format("Ошибка чтения файла: %s%n", e);
@@ -127,7 +127,7 @@ public class InstrumentRepository implements IInstrumentRepository{
                 writer.write("id; title; unit_of_measurement; division_price; sensitivity; maximum_value; number_of_box");
                 writer.newLine();
 
-                // Записываем данные всех студентов, кроме удаленного
+                // Записываем данные всех приборов, кроме удаленного
                 for (Instrument instrument : instruments) {
                     writer.write(instrument.getId() + ";" +
                             instrument.getTitle() + ";" +
@@ -152,8 +152,8 @@ public class InstrumentRepository implements IInstrumentRepository{
     @SneakyThrows
     @Override
     public void updateInstrument(Instrument instrument){
-        List<String> lines = Files.readAllLines(Path.of(file), StandardCharsets.UTF_8);
-        lines.remove(0);
+        List<String> lines = Files.readAllLines(Path.of(file), StandardCharsets.UTF_8);//создаем массив линий и читаем каждую линию
+        lines.remove(0);//удаляется нулевая линия
         List<String> updatedLines = new ArrayList<>();
         updatedLines.add(fileHead);
         for (String line : lines) {
@@ -166,7 +166,7 @@ public class InstrumentRepository implements IInstrumentRepository{
             }
         }
         Files.write(Path.of(file), updatedLines, StandardCharsets.UTF_8);
-        System.out.println("Информация о студенте успешно изменена в файле.");
+        System.out.println("Информация о приборе успешно изменена в файле.");
     } //catch (IOException e) {
         //System.err.println("Ошибка при изменении информации о студенте в файле: " + e.getMessage());
     //}

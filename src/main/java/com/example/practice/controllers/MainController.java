@@ -28,7 +28,7 @@ public class MainController {
         return "home";
     }
     @PostMapping("/home/delete/{id}")
-    public String instrumentDelete(@PathVariable Long id) {
+    public String instrumentDelete(@PathVariable Long id) {//@PathVariable - id берем из юрл
         instrumentService.deleteInstrument(id);
         return "redirect:/";
     }
@@ -49,7 +49,7 @@ public class MainController {
                                  @RequestParam int division_price,
                                  @RequestParam double sensitivity,
                                  @RequestParam int maximum_value,
-                                 @RequestParam int number_of_box){
+                                 @RequestParam int number_of_box){//что получаем со странички
         Long id = 0L;
         Instrument instrument = new Instrument(id, title, unit_of_measurement, division_price, sensitivity, maximum_value, number_of_box);
         instrumentService.createInstrument(instrument);
