@@ -9,7 +9,7 @@ import java.util.List;
 public class InstrumentService implements IInstrumentService {
 
     private final IInstrumentRepository instrumentRepository; //создание объекта такого класса (репозитория)
-    private List<Instrument> instruments;
+    //private List<Instrument> instruments;
     public InstrumentService(IInstrumentRepository instrumentRepository) {
         this.instrumentRepository=instrumentRepository; //вызывает методы репозитория
     }
@@ -29,18 +29,18 @@ public class InstrumentService implements IInstrumentService {
     public void createInstrument(Instrument instrument) {
         instrument.setId(++id);
         instrumentRepository.createInstrument(instrument);
-        instruments = instrumentRepository.getAllInstrument();
+       // instruments = instrumentRepository.getAllInstrument();
     }
 
     @Override
     public void deleteInstrument(Long id) {
         instrumentRepository.deleteInstrument(id);
-        instruments = instrumentRepository.getAllInstrument();
+        //instruments = instrumentRepository.getAllInstrument();
     }
 
     @Override
     public void updateInstrument(Instrument instrument) {
         instrumentRepository.updateInstrument(instrument);
-        instruments = instrumentRepository.getAllInstrument();
+      //  instruments = instrumentRepository.getAllInstrument();
     }
 }
