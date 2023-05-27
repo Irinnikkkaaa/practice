@@ -1,0 +1,52 @@
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-md-row {
+    flex-direction: row;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.pb-3 {
+    padding-bottom: 0.75rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.link-body-emphasis {
+    color: #007bff;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.fs-4 {
+    font-size: 1.5rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.me-3 {
+    margin-right: 1rem;
+}
+
+.ms-md-auto {
+    margin-left: auto !important;
+}
