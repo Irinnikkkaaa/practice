@@ -44,11 +44,3 @@ label {
     display: block;
 }
 
-.required::before {
-    content: "*";
-    color: red;
-}
-
-.error-message {
-    color: red;
-}

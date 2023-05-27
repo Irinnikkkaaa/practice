@@ -3,9 +3,18 @@
 <head>
     <title>Добавление измерительных приборов</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Список приборов</a></li>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/instrument">Добавление прибора</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-<header th:insert="blocks/header :: header"></header>
     <h1>Добавление измерительных приборов</h1>
 <form th:action="@{/instrument/add}" method="post">
     <input type="text" name="title" placeholder="Наименование" required>

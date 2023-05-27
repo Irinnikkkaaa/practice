@@ -1,11 +1,21 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}"/>
+    <title>Табель измерительных приборов</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
+<header>
+    <h1>Табель измерительных приборов</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Список приборов</a></li>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/instrument">Добавление прибора</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-<header th:insert="blocks/header :: header"></header>
     <main>
         <table>
             <thead>

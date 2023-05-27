@@ -1,11 +1,21 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${title}"/>
+    <title>Табель измерительный приборов</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Список приборов</a></li>
+            <li><a href="/about">О нас</a></li>
+            <li><a href="/instrument">Добавление прибора</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-<header th:insert="blocks/header :: header"></header>
+<h3>Введите новый номер ящика</h3>
 <main>
     <form th:action="@{/instrument/{id}/update(id=${id})}" method ="post">
         <input type="number" name="number_of_box" placeholder="Номер ящика" th:value="${instrument.number_of_box}" required>

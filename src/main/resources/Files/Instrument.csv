@@ -1,8 +1,8 @@
-id;title;unit_of_measurement;division_price;sensitivity;maximum_value;number_of_box
+id; title; unit_of_measurement; division_price; sensitivity; maximum_value; number_of_box
 1;Мультиметр;V,mV;5;2.0;1999;7
 2;Вольтметр;V;5;14.0;420;6
 3;Амперметр;А;1;10.0;20;3
 4;Термометр;С;1;15.0;120;5
 5;Омметр и измеритель емкости;mF;100;25.0;20;4
 6;Динанометр;Н;1;1.0;10;1
-7;Милиамперметр;мА;5;12.00;50;2
+7;Милиамперметр;мА;5;12.0;50;2
