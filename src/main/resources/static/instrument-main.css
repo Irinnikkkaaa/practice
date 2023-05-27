@@ -1,5 +1,5 @@
 header {
-    background-color: #333;
+    background-color: #ffffff;
     color: #fff;
     padding: 1rem;
 }
@@ -28,7 +28,7 @@ input {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #9696ea;
     color: #fff;
     padding: 0.5rem 1rem;
     border: none;
@@ -37,7 +37,7 @@ button {
 }
 
 button:hover {
-    background-color: #0069d9;
+    background-color: #310062;
 }
 
 label {
